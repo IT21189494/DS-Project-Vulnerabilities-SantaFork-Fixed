@@ -66,7 +66,7 @@ function ViewCourses() {
               {filteredCourses.map((course, index) => (
                 <div className='row-1' key={index}>
                   <div className='course-image-con'>
-                    <img src={course.courseImage} alt="image" width={260} height={150} />
+                    <img src={course.courseImage} alt={`${course.courseName}`} width={260} height={150} />
                   </div>
                   <div className='course-deteails-con'>
                     <div className='course-name'>
