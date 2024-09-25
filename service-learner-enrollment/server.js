@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+// const helmet = require('helmet');
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -9,6 +10,19 @@ const verifyJWT = require("./middlewares/verifyJWTMiddleware");
 
 connectDB();
 const app = express();
+
+// // Use Helmet to set security headers
+// app.use(helmet());
+
+// app.use(helmet.contentSecurityPolicy({
+//   directives: {
+//     defaultSrc: ["'self'"],
+//     scriptSrc: ["'self'", "trusted-cdn.com"],
+//     styleSrc: ["'self'", "'unsafe-inline'"],
+//     imgSrc: ["'self'", "data:"],
+//   },
+// }));
+
 const PORT = process.env.PORT || 4001;
 
 app.use(
