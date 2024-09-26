@@ -48,15 +48,24 @@ app.use(
 app.use(verifyJWT);
 app.use(errorHandler);
 
+// let serverPromise = new Promise((resolve, reject) => {
+//   mongoose.connection.once("open", () => {
+//     console.log(
+//       `🚀 data connection with course enrollment collection established! 🚀`
+//     );
+//     const server = app.listen(PORT, () => {
+//       console.log(
+//         `🎲 learner enrollment service is up and running on port: ${PORT} 🎲`
+//       );
+//       resolve(server);
+//     });
+//   });
+// });
 let serverPromise = new Promise((resolve, reject) => {
   mongoose.connection.once("open", () => {
-    console.log(
-      `🚀 data connection with course enrollment collection established! 🚀`
-    );
+    console.log("🚀 data connection with course enrollment established! 🚀");
     const server = app.listen(PORT, () => {
-      console.log(
-        `🎲 learner enrollment service is up and running on port: ${PORT} 🎲`
-      );
+      console.log("🎲 Learner enrollment service is up and running on port: " + PORT + " 🎲");
       resolve(server);
     });
   });
