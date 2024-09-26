@@ -177,10 +177,16 @@ function ViewCourse() {
                        
                             <div className='view-content-list-item' >
                                 <div className='view-content-list-item-image' key={index}>
-                                <iframe
+                                {/* <iframe
                                     style={{ width: '100%', height: '100%' }}
                                     src={`https://www.youtube.com/embed/${getYouTubeVideoId(content.lectureVideo)}`}
                                     allowFullScreen
+                                ></iframe> */}
+                                <iframe
+                                style={{ width: '100%', height: '100%' }}
+                                src={`https://www.youtube.com/embed/${getYouTubeVideoId(content.lectureVideo)}`}
+                                title={`Lecture Video: ${content.lectureName}`}
+                                allowFullScreen
                                 ></iframe>
                                 </div>
                                 <div className='view-content-list-item-details'>
